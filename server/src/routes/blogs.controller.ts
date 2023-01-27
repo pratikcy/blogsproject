@@ -27,3 +27,5 @@ export {
   httpGetBlogsByHashtag,
   httpGetBlogsByMonth,
 };
+
+// four functions which is used to handle routes for getting blog data by category, language, hashtag, or month.

@@ -1,11 +1,11 @@
-const express = require("express");
-const morgan = require("morgan");
+const express = require("express"); //create express app.
+const morgan = require("morgan"); //logging http request information
 const cors = require("cors");
 const blogRouter = require("./routes/blogs.routes");
 
 const app = express();
 
-app.disable("x-powered-by");
+app.disable("x-powered-by"); //header to hide information about the server
 
 app.use(
   cors({

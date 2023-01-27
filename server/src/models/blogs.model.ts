@@ -1,6 +1,6 @@
-const fs = require("fs");
+const fs = require("fs"); //read stream
 const path = require("path");
-const csv = require("csv-parser");
+const csv = require("csv-parser"); // convert csv data to array of objects
 
 interface Occurrences {
   [key: string]: number;
@@ -11,9 +11,11 @@ interface Occurrences {
  * @returns
  */
 function loadAllBlogDataCountByKey(key: string): Promise<Occurrences> {
+  // one key parameter and returns a promise which resolves the object containing the occurrences of value in csv file
   let rowArr: string[] = [];
   let occurrences: Occurrences = {};
-
+  //  each object is row
+  // keys of the object is column headers
   return new Promise((resolve, reject) => {
     fs.createReadStream(path.join(__dirname, "..", "..", "data", "blog.csv"))
       .pipe(csv())
@@ -31,7 +33,7 @@ function loadAllBlogDataCountByKey(key: string): Promise<Occurrences> {
           resolve(occurrences);
         } else {
           console.log("Do we have data? " + rowArr);
-          occurrences = rowArr.reduce(accumulate, {});
+          occurrences = rowArr.reduce(accumulate, {}); // reduce counts the occurrences of each value in the array
           resolve(occurrences);
         }
       });
