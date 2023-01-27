@@ -1,0 +1,38 @@
+{
+  "name": "blog-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
+    "install": "concurrently \"npm:install-server\" \"npm:install-client\"",
+    "watch-server": "npm run watch --prefix server",
+    "server": "npm run start --prefix server",
+    "client": "npm start --prefix client",
+    "watch": "concurrently \"npm:watch-server\" \"npm:client\"",
+    "start": "concurrently \"npm:server\" \"npm:client\"",
+    "build-server": "tsc --project server",
+    "build-client": "tsc --project client",
+    "build": "concurrently \"npm:build-server\" \"npm:build-client\"",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdshinde/BlogsProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cdshinde/BlogsProject/issues"
+  },
+  "homepage": "https://github.com/cdshinde/BlogsProject#readme",
+  "dependencies": {
+    "concurrently": "^7.6.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1",
+    "nodemon": "^2.0.4",
+    "typescript": "^4.1.3"
+  }
+}

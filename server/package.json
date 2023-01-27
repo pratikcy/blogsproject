@@ -1,0 +1,35 @@
+{
+  "name": "blog-project-api",
+  "version": "1.0.0",
+  "description": "POC for Xyleme",
+  "main": "src/server.js",
+  "jest": {
+    "testPathIgnorePatterns": [
+      "__test__"
+    ]
+  },
+  "scripts": {
+    "start": "tsc && node src/server.ts",
+    "watch": "tsc -w",
+    "test": "jest --coverage --collectCoverageFrom=src/**",
+    "test-watch": "jest --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.11.18",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1",
+    "nodemon": "^2.0.20",
+    "supertest": "^6.3.3",
+    "typescript": "^4.1.3"
+  }
+}
